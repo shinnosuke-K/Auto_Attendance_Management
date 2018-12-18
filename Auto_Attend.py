@@ -98,7 +98,7 @@ def get_student_num(top_left):
     # 学籍番号
     student_num = ''
 
-    # 左端からの各番号までの距
+    # 左端からの各番号までの距離
     #              0    1   2    3    4    5    6    7    8    9
     number_dis = [760, 70, 145, 220, 300, 375, 450, 530, 600, 680]
 
@@ -145,8 +145,8 @@ def check_paper_num(crop_img):
     :return: <int> Paper number
     """
     img_pil = Image.fromarray(crop_img).convert('RGB')
-
     tools = pyocr.get_available_tools()
+
     if len(tools) == 0:
         print('No OCR tool found')
         sys.exit(1)
@@ -165,9 +165,12 @@ if __name__ == '__main__':
 
     try:
         late_num = int(sys.argv[1])
+        date_num = str(sys.argv[2])
+        # 0:出席 1:遅刻
+        attendance = 0
     except IndexError:
         print()
-        print('\n Please input the late number as the argument. \n')
+        print('\n Please input both the late number and the date as the argument. \n')
         sys.exit(1)
 
     # ファイル
@@ -203,4 +206,4 @@ if __name__ == '__main__':
         paper_num = check_paper_num(cut_image(img, paper_num_img, 70, 0))
 
         # ファイル名を紙番号と学籍番号へ変更
-        rename_file(student_num, paper_num, int(late_num), i)
+        rename_file(student_num, paper_num, late_num, i)
