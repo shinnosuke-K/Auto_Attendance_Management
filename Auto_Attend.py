@@ -8,6 +8,7 @@ import shutil
 from PIL import Image
 import pyocr.builders
 import numpy as np
+import RecordToCSV
 
 
 # 読み込んだファイル数をカウント
@@ -161,13 +162,21 @@ def check_paper_num(crop_img):
     return int(num)
 
 
+def check_attendance(paper_num, late_num):
+    if not student_num:
+        return 2
+    elif paper_num > late_num:
+        return 0
+    else:
+        return 1
+
+
 if __name__ == '__main__':
 
     try:
         late_num = int(sys.argv[1])
         date_num = str(sys.argv[2])
-        # 0:出席 1:遅刻
-        attendance = 0
+
     except IndexError:
         print()
         print('\n Please input both the late number and the date as the argument. \n')
@@ -207,3 +216,6 @@ if __name__ == '__main__':
 
         # ファイル名を紙番号と学籍番号へ変更
         rename_file(student_num, paper_num, late_num, i)
+
+        attendance = check_attendance(paper_num, late_num)
+        RecordToCSV.input_csv(student_num, late_num, attendance)

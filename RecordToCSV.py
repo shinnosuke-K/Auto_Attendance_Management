@@ -7,4 +7,8 @@ def read_csv():
     df = pd.read_csv('Computer_configuration_theory.csv', encoding='utf_8', index_col=0)
     return df
 
+
 def input_csv(student_num, date_num, attendance):
+    df = read_csv()
+    df.at[student_num, date_num] = attendance
+ 
