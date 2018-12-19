@@ -8,9 +8,7 @@ import shutil
 from PIL import Image
 import pyocr.builders
 import numpy as np
-import RecordToCSV
-
-
+import pand
 # 読み込んだファイル数をカウント
 def count_file():
 
@@ -171,6 +169,11 @@ def check_attendance(paper_num, late_num):
         return 1
 
 
+def input_csv(student_num, date_num, attendance):
+    df = pd.read_csv('Computer_configuration_theory.csv', encoding='utf_8', index_col=0)
+    df.at[student_num, date_num] = attendance
+
+
 if __name__ == '__main__':
 
     try:
@@ -218,4 +221,4 @@ if __name__ == '__main__':
         rename_file(student_num, paper_num, late_num, i)
 
         attendance = check_attendance(paper_num, late_num)
-        RecordToCSV.input_csv(student_num, late_num, attendance)
+        input_csv('1' + student_num, late_num, attendance)
