@@ -8,7 +8,9 @@ import shutil
 from PIL import Image
 import pyocr.builders
 import numpy as np
-import pand
+import pandas as pd
+
+
 # 読み込んだファイル数をカウント
 def count_file():
 
