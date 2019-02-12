@@ -54,7 +54,7 @@ python Auto_Attend.py {講義日}
 
 ## Auto_Attend.py
 これがこのプログラムの mainファイルです  
-このファイルを実行します実行方法は別の項目で
+このファイルを実行します実行方法は概要を参照で
 
 ## SubmitForm
 &emsp;ここに用紙のjpgファイルを保存してください 
