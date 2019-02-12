@@ -8,6 +8,7 @@
 - [SubmitForm](#submitform)
   - [前準備](#前準備)
   - [ディレクトリ構造](#ディレクトリ構造)
+  - [Auto_Attend.py](#Auto_Attend.py)
   - [SubmitForm](#SubmitForm)
   - [TemplateForm](#templateform)
   - [プログラム環境](#プログラム環境)
@@ -47,6 +48,9 @@
 ## ディレクトリ構造
 ディレクトリ構造はこちら
 
+## Auto_Attend.py
+これがこのプログラムの mainファイルです  
+このファイルを実行します実行方法は別の項目で
 
 ## SubmitForm
 &emsp;ここに用紙のjpgファイルを保存してください 
