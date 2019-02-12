@@ -51,7 +51,7 @@
 &emsp;ここに用紙のjpgファイルを保存してください 
 &emsp;遅刻ならLateArrival（これはいらない）、マークが未記入ならAnonymous（これもいらない）へファイルが移動します
 
-## TemplateForm（
+## TemplateForm
 &emsp;ここはプログラムで使用する３つのテンプレート画像があります。説明が面倒くさいので画像貼ります  
 &emsp;（画像の説明は省力で）
 <br>
